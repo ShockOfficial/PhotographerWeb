@@ -163,15 +163,16 @@ body {
 
 .header {
 	position: relative;
-	height: 75vh;
+	height: 85vh;
 	background-color: $color-bg-primary;
 	&__bg {
+		position: relative;
 		width: 100%;
 		height: 100%;
 		background-image: url('../img/hero.jpg');
 		background-size: cover;
 		background-position: center 10%;
-		background-attachment: fixed;
+		// background-attachment: fixed;
 		filter: brightness(80%);
 		// clip-path: circle(350px);
 	}
@@ -191,6 +192,35 @@ body {
 		font-size: 10rem;
 		color: #f1ae61;
 		text-shadow: 2px 3px 1px black;
+	}
+
+	&__btn-box {
+		position: absolute;
+		top: 95%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
+		color: #fff;
+	}
+
+	&__btn {
+		border: none;
+		background: none;
+		color: #fff;
+		padding: 1rem;
+		font-size: 2rem;
+		cursor: pointer;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+	&__photo-status {
+		font-size: 1.8rem;
 	}
 }
 
