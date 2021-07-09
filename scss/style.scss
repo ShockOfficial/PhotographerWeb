@@ -165,7 +165,7 @@ body {
 	position: relative;
 	height: 85vh;
 	background-color: $color-bg-primary;
-	&__bg {
+	&__carousel {
 		position: relative;
 		width: 100%;
 		height: 100%;
@@ -222,6 +222,64 @@ body {
 	&__photo-status {
 		font-size: 1.8rem;
 	}
+}
+
+.carousel {
+	position: relative;
+	height: 85vh;
+	overflow: hidden;
+
+	&__image-field {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		transition: transform 0.9s;
+	}
+
+	&__img {
+		// position: absolute;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		filter: brightness(80%);
+		flex: 0 0 100%;
+		object-fit: cover;
+
+		// transition: left 0.9s;
+	}
+
+	&__btn-box {
+		position: absolute;
+		top: 95%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
+		color: #fff;
+	}
+
+	&__btn {
+		border: none;
+		background: none;
+		color: #fff;
+		padding: 1rem;
+		font-size: 2rem;
+		cursor: pointer;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+	&__photo-status {
+		font-size: 1.8rem;
+	}
+}
+
+.active-photo {
+	left: 0;
 }
 
 .active {
