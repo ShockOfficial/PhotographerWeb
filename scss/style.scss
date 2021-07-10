@@ -1,5 +1,5 @@
 @import './variable.scss';
-
+@import './mixins.scss';
 *,
 *::after,
 *::before {
@@ -11,16 +11,30 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+
+	@media (min-width: 56.25em) {
+		font-size: 75%;
+	}
+
+	@media (min-width: 62.5em) {
+		font-size: 87.5%;
+	}
 }
 
 body {
 	font-family: 'Roboto', sans-serif;
 	background-color: $color-bg-primary;
 	background-color: #f9fdfd;
-	height: 200vh;
 	@media (min-width: 48em) {
 		padding-left: 165px;
 	}
+}
+
+.btn {
+	outline: none;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
 
 .nav {
@@ -31,7 +45,6 @@ body {
 	display: flex;
 	align-items: center;
 	box-shadow: 15px 0 0 $color-bg-secondary;
-
 	z-index: 20;
 
 	@media (min-width: 48em) {
@@ -64,6 +77,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
+		user-select: none;
 		margin-right: 50px;
 	}
 
@@ -116,7 +130,7 @@ body {
 			text-decoration: none;
 			text-transform: uppercase;
 			color: $color-font;
-			font-size: 1.8rem;
+			font-size: 18px;
 			line-height: 60px;
 			border-radius: 10px 0 0 10px;
 		}
@@ -124,7 +138,7 @@ body {
 
 	&__box {
 		position: absolute;
-		left: 60%;
+		left: 30%;
 		display: flex;
 		align-items: flex-start;
 		flex-direction: column;
@@ -161,72 +175,9 @@ body {
 ////////////////////////////////////////////////////////////
 //////////////// HEADER
 
-.header {
-	position: relative;
-	height: 85vh;
-	background-color: $color-bg-primary;
-	&__carousel {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-image: url('../img/hero.jpg');
-		background-size: cover;
-		background-position: center 10%;
-		// background-attachment: fixed;
-		filter: brightness(80%);
-		// clip-path: circle(350px);
-	}
-
-	&__text {
-	}
-
-	&__welcome {
-		font-size: 8rem;
-		font-weight: bold;
-		font-family: 'Dancing Script', sans-serif;
-	}
-
-	&__auth-name {
-		font-family: 'Dancing Script', sans-serif;
-		margin-left: 12rem;
-		font-size: 10rem;
-		color: #f1ae61;
-		text-shadow: 2px 3px 1px black;
-	}
-
-	&__btn-box {
-		position: absolute;
-		top: 95%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 1.5rem;
-		color: #fff;
-	}
-
-	&__btn {
-		border: none;
-		background: none;
-		color: #fff;
-		padding: 1rem;
-		font-size: 2rem;
-		cursor: pointer;
-		transition: color 0.3s;
-
-		&:hover {
-			color: $color-primary;
-		}
-	}
-	&__photo-status {
-		font-size: 1.8rem;
-	}
-}
-
 .carousel {
 	position: relative;
-	height: 85vh;
+	height: 90vh;
 	overflow: hidden;
 
 	&__image-field {
@@ -237,15 +188,12 @@ body {
 	}
 
 	&__img {
-		// position: absolute;
 		position: relative;
 		width: 100%;
 		height: 100%;
 		filter: brightness(80%);
 		flex: 0 0 100%;
 		object-fit: cover;
-
-		// transition: left 0.9s;
 	}
 
 	&__btn-box {
@@ -278,8 +226,188 @@ body {
 	}
 }
 
-.active-photo {
-	left: 0;
+////////////////////////////////////////////////////////////////
+//////// ABOUT ME
+
+.about {
+	background-color: $color-bg-primary;
+	overflow: hidden;
+	&__box {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		flex-direction: column;
+		padding: 4rem;
+		padding-bottom: 8rem;
+		@include wrapper();
+
+		@media (min-width: 48em) {
+			flex-direction: row;
+		}
+	}
+
+	&__img-box {
+		position: relative;
+		width: min-content;
+
+		&::after {
+			content: '';
+			width: 95%;
+			height: 80%;
+			position: absolute;
+			bottom: -8%;
+			right: -7%;
+			border: 8px solid rgba($color-bg-tetriary, 0.6);
+			border-radius: 5px;
+			z-index: 3;
+		}
+	}
+
+	&__img {
+		position: relative;
+		width: 25rem;
+		object-fit: cover;
+		border-radius: 5px;
+		clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+		z-index: 2;
+		margin-top: 5rem;
+		transition: 0.5s;
+	}
+
+	&__text-content {
+		padding: 2.5rem;
+		@media (min-width: 48em) {
+			margin-left: 3.5rem;
+		}
+	}
+
+	&__heading {
+		font-size: 3.5rem;
+		font-family: 'Dancing Script', sans-serif;
+		margin-top: 1.5rem;
+		margin-bottom: 1rem;
+		font-weight: bold;
+	}
+
+	&__text {
+		font-size: 1.8rem;
+		text-align: center;
+		font-family: 'Nunito', sans-serif;
+		font-weight: 400;
+	}
+}
+
+//////////////////////////////////////////////////////////
+/////////// GALLERY
+
+.gallery {
+	&__top-box {
+		position: relative;
+		width: 100%;
+		min-height: 85vh;
+		height: 100%;
+		background-image: url('../img/gallery-entry.jpg');
+		background-size: cover;
+		background-attachment: fixed;
+		padding: 2.5rem 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		color: $color-bg-primary;
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	&__text-content {
+		// width: 100%;
+		// height: 100%;
+		// position: absolute;
+		// top: 0;
+		// left: 0;
+		// display: flex;
+		// justify-content: center;
+		// align-items: center;
+		// flex-direction: column;
+		// color: $color-bg-primary;
+	}
+
+	&__heading {
+		margin-top: 4rem;
+		text-align: center;
+		font-size: 6rem;
+		font-family: 'Dancing Script', sans-serif;
+		z-index: 1;
+	}
+
+	&__description {
+		text-align: center;
+		font-size: 1.6rem;
+		margin: 3.5rem 8rem;
+		z-index: 1;
+	}
+	&__btn {
+		position: relative;
+		padding: 1.5rem 2.5rem;
+		color: $color-bg-primary;
+		font-weight: bold;
+		font-size: 1.2rem;
+		border-radius: 20px;
+		text-transform: uppercase;
+		// background-image: linear-gradient(
+		// 	to right,
+		// 	$color-bg-secondary,
+		// 	$color-bg-tetriary
+		// );
+		border: 2px solid #f8f3f3;
+		box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.8);
+		transition: 0.3s;
+		z-index: 1;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			border-radius: 20px;
+			border: 2px solid #f8f3f3;
+			transition: 0.3s;
+			visibility: hidden;
+		}
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 1rem 1.8rem rgba(0, 0, 0, 0.2);
+			&::after {
+				visibility: visible;
+				transform: scaleX(1.6) scaleY(2);
+				opacity: 0;
+			}
+		}
+
+		// &:hover::after {
+		// 	transform: scale(1.2);
+		// 	opacity: 1;
+		// 	visibility: hidden;
+		// }
+
+		&:active {
+			transform: scale(1.05) translateY(-3px);
+		}
+	}
 }
 
 .active {
@@ -302,6 +430,11 @@ body {
 		content: '';
 		position: absolute;
 		top: 60px;
+		.btn {
+			outline: none;
+			background: none;
+			border: none;
+		}
 		right: 9px;
 		display: block;
 		width: 30px;

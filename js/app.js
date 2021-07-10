@@ -96,9 +96,10 @@ function slideImage(e) {
 	}`;
 
 	// Swipe to appropriate image
+
 	carousel.container.style.transform = `translateX(-${
-		currentImg.width * carousel.currentImgIndex
-	}px)`;
+		100 * carousel.currentImgIndex
+	}%)`;
 
 	startAutoSwiping();
 }
@@ -119,4 +120,3 @@ const main = function () {
 
 document.addEventListener('DOMContentLoaded', main);
 window.addEventListener('resize', setMenuType);
-window.addEventListener('resize', slideImage);
