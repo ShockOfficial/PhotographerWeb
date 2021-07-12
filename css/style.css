@@ -110,6 +110,14 @@ body {
   margin-right: 50px;
 }
 
+@media (min-width: 48em) {
+  .nav__bars-box {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
 .nav__bars {
   position: relative;
   display: block;
@@ -156,6 +164,8 @@ body {
 @media (min-width: 48em) {
   .nav__bars {
     display: none;
+    visibility: hidden;
+    opacity: 0;
   }
 }
 
@@ -293,8 +303,64 @@ body {
 }
 
 .about {
+  position: relative;
   background-color: #fdfdfd;
   overflow: hidden;
+}
+
+.about__title-box {
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  border-radius: 40%;
+}
+
+.about__title-box::after, .about__title-box::before {
+  content: '';
+  display: block;
+  width: 500%;
+  height: 2px;
+  position: absolute;
+  left: -510%;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  background-color: #1f202b;
+}
+
+.about__title-box::before {
+  left: 110%;
+}
+
+.about__title {
+  position: relative;
+  font-family: sans-serif;
+  position: relative;
+  font-size: 4.5rem;
+  font-family: 'Caveat', sans-serif;
+  color: #1f202b;
+  font-weight: bold;
+}
+
+.about__title::after {
+  content: '';
+  display: block;
+  width: 130%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 7px double #1f202b;
+  border-radius: 8px;
 }
 
 .about__box {
@@ -312,8 +378,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 4rem;
-  padding-bottom: 8rem;
+  padding: 12rem 4rem;
+  padding-top: 5rem;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -325,6 +391,8 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    padding: 12rem 6rem;
+    padding-top: 5rem;
   }
 }
 
@@ -356,25 +424,48 @@ body {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
   z-index: 2;
-  margin-top: 5rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .about__text-content {
-  padding: 2.5rem;
+  position: relative;
+  padding: 2rem;
+  -webkit-box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fdfdfd;
+  z-index: 2;
+}
+
+.about__text-content::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 30%;
+  right: -30px;
+  height: 80%;
+  width: 30%;
+  border: 10px dotted #1f202b;
+  border-left: none;
+  border-top: none;
 }
 
 @media (min-width: 48em) {
   .about__text-content {
-    margin-left: 3.5rem;
+    margin-left: 4rem;
+  }
+  .about__text-content::after {
+    top: -10%;
+    height: 120%;
+    width: 40%;
+    border: 6px dotted #1f202b;
+    border-left: none;
   }
 }
 
 .about__heading {
   font-size: 3.5rem;
   font-family: 'Dancing Script', sans-serif;
-  margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
 }
@@ -386,6 +477,13 @@ body {
   font-weight: 400;
 }
 
+.about__circle {
+  position: absolute;
+  width: 50%;
+  right: -25%;
+  top: -15%;
+}
+
 .gallery__top-box {
   position: relative;
   width: 100%;
@@ -394,7 +492,7 @@ body {
   background-image: url("../img/gallery-entry.jpg");
   background-size: cover;
   background-attachment: fixed;
-  padding: 2.5rem 0;
+  padding: 5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -409,6 +507,12 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   color: #fdfdfd;
+}
+
+@media (min-width: 48em) {
+  .gallery__top-box {
+    padding: 2.5rem 0;
+  }
 }
 
 .gallery__bg {
@@ -432,8 +536,14 @@ body {
 .gallery__description {
   text-align: center;
   font-size: 1.6rem;
-  margin: 3.5rem 8rem;
+  margin: 3.5rem 4rem;
   z-index: 1;
+}
+
+@media (min-width: 48em) {
+  .gallery__description {
+    margin: 3.5rem 8rem;
+  }
 }
 
 .gallery__btn {
@@ -455,26 +565,33 @@ body {
 .gallery__btn::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -2px;
+  left: -2px;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
   border-radius: 20px;
   border: 2px solid #f8f3f3;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: visibility 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  transition: visibility 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
+  transition: transform 0.3s, visibility 0.3s, opacity 0.3s, -webkit-transform 0.3s;
   visibility: hidden;
 }
 
-.gallery__btn:hover {
+.gallery__btn:link, .gallery__btn:visited {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.gallery__btn:hover, .gallery__btn:focus {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
   -webkit-box-shadow: 0 1rem 1.8rem rgba(0, 0, 0, 0.2);
           box-shadow: 0 1rem 1.8rem rgba(0, 0, 0, 0.2);
 }
 
-.gallery__btn:hover::after {
+.gallery__btn:hover::after, .gallery__btn:focus::after {
   visibility: visible;
   -webkit-transform: scaleX(1.6) scaleY(2);
           transform: scaleX(1.6) scaleY(2);
@@ -484,6 +601,49 @@ body {
 .gallery__btn:active {
   -webkit-transform: scale(1.05) translateY(-3px);
           transform: scale(1.05) translateY(-3px);
+}
+
+.gallery__bottom-box {
+  background-color: #dff9fb;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 48em) {
+  .gallery__bottom-box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.gallery__item {
+  width: 100%;
+}
+
+@media (min-width: 48em) {
+  .gallery__item {
+    width: 50%;
+  }
+}
+
+.gallery__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .active {
