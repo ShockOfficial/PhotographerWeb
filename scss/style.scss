@@ -44,7 +44,7 @@ body {
 	height: 80px;
 	display: flex;
 	align-items: center;
-	box-shadow: 15px 0 0 $color-bg-secondary;
+	box-shadow: 15px 0 0 $color-bg-primary;
 	z-index: 20;
 
 	@media (min-width: 48em) {
@@ -285,7 +285,7 @@ body {
 			top: 50%;
 			left: 53%;
 			transform: translate(-50%, -50%);
-			border: 3px solid $color-font;
+			border: 2px solid $color-font;
 			border-radius: 8px;
 		}
 	}
@@ -497,6 +497,7 @@ body {
 
 		background-color: $color-bg-primary;
 		border-radius: 8px;
+		padding: 1.5rem 2.5rem;
 		padding-bottom: 15rem;
 		display: flex;
 		justify-content: center;
@@ -509,6 +510,10 @@ body {
 			flex-direction: row;
 			gap: 2.5rem;
 		}
+		@media (min-width: 56.25em) {
+			flex-direction: row;
+			gap: 1rem;
+		}
 	}
 
 	&__item {
@@ -518,10 +523,17 @@ body {
 		padding: 1.5rem;
 		border-radius: 5px;
 		box-shadow: 3px 5px 8px rgba(37, 31, 31, 0.3);
+		text-align: center;
 
 		@media (min-width: 48em) {
-			width: 31%;
+			width: 49%;
+			flex: 1 1 48%;
 			padding: 1.5rem;
+		}
+
+		@media (min-width: 68.75em) {
+			flex: 1 1 30%;
+			height: 550px;
 		}
 	}
 
@@ -530,7 +542,7 @@ body {
 		width: 80%;
 		bottom: -10%;
 		padding: 1.5rem;
-		// margin-left: 2.5rem;
+
 		left: 50%;
 		transform: translateX(-50%);
 		box-shadow: 3px 5px 8px rgba(37, 31, 31, 0.3);
@@ -556,7 +568,7 @@ body {
 		font-weight: 600;
 
 		@media (min-width: 48em) {
-			font-size: 1.7rem;
+			font-size: 1.6rem;
 		}
 	}
 
@@ -566,6 +578,7 @@ body {
 
 		@media (min-width: 48em) {
 			font-size: 1.2rem;
+			width: 95%;
 		}
 
 		@media (min-width: 56.25em) {
@@ -588,7 +601,7 @@ body {
 
 .active {
 	position: relative;
-	background-color: $color-bg-secondary;
+	background-color: $color-bg-primary;
 	color: $color-font;
 	&::after {
 		content: '';
@@ -599,7 +612,7 @@ body {
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;
-		box-shadow: 15px 15px 0 $color-bg-secondary;
+		box-shadow: 15px 15px 0 $color-bg-primary;
 	}
 
 	&::before {
@@ -616,7 +629,7 @@ body {
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;
-		box-shadow: 15px -15px 0 $color-bg-secondary;
+		box-shadow: 15px -15px 0 $color-bg-primary;
 	}
 }
 

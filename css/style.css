@@ -55,8 +55,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 15px 0 0 #dff9fb;
-          box-shadow: 15px 0 0 #dff9fb;
+  -webkit-box-shadow: 15px 0 0 #fdfdfd;
+          box-shadow: 15px 0 0 #fdfdfd;
   z-index: 20;
 }
 
@@ -359,7 +359,7 @@ body {
   left: 53%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  border: 3px solid #1f202b;
+  border: 2px solid #1f202b;
   border-radius: 8px;
 }
 
@@ -609,6 +609,7 @@ body {
   margin: 0 auto;
   background-color: #fdfdfd;
   border-radius: 8px;
+  padding: 1.5rem 2.5rem;
   padding-bottom: 15rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -639,6 +640,16 @@ body {
   }
 }
 
+@media (min-width: 56.25em) {
+  .gallery__bottom-box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 1rem;
+  }
+}
+
 .gallery__item {
   position: relative;
   width: 80%;
@@ -647,12 +658,25 @@ body {
   border-radius: 5px;
   -webkit-box-shadow: 3px 5px 8px rgba(37, 31, 31, 0.3);
           box-shadow: 3px 5px 8px rgba(37, 31, 31, 0.3);
+  text-align: center;
 }
 
 @media (min-width: 48em) {
   .gallery__item {
-    width: 31%;
+    width: 49%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 48%;
+            flex: 1 1 48%;
     padding: 1.5rem;
+  }
+}
+
+@media (min-width: 68.75em) {
+  .gallery__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 30%;
+            flex: 1 1 30%;
+    height: 550px;
   }
 }
 
@@ -689,7 +713,7 @@ body {
 
 @media (min-width: 48em) {
   .gallery__item-heading {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -701,6 +725,7 @@ body {
 @media (min-width: 48em) {
   .gallery__item-description {
     font-size: 1.2rem;
+    width: 95%;
   }
 }
 
@@ -727,7 +752,7 @@ body {
 
 .active {
   position: relative;
-  background-color: #dff9fb;
+  background-color: #fdfdfd;
   color: #1f202b;
 }
 
@@ -740,8 +765,8 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  -webkit-box-shadow: 15px 15px 0 #dff9fb;
-          box-shadow: 15px 15px 0 #dff9fb;
+  -webkit-box-shadow: 15px 15px 0 #fdfdfd;
+          box-shadow: 15px 15px 0 #fdfdfd;
 }
 
 .active::before {
@@ -753,8 +778,8 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  -webkit-box-shadow: 15px -15px 0 #dff9fb;
-          box-shadow: 15px -15px 0 #dff9fb;
+  -webkit-box-shadow: 15px -15px 0 #fdfdfd;
+          box-shadow: 15px -15px 0 #fdfdfd;
 }
 
 .active::before .btn {
