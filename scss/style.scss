@@ -12,6 +12,7 @@ html {
 	box-sizing: border-box;
 	font-size: 62.5%;
 	scroll-behavior: smooth;
+	scroll-padding-top: 7.9rem;
 
 	@media (min-width: 56.25em) {
 		font-size: 75%;
@@ -111,9 +112,9 @@ body {
 		font-size: 6rem;
 		font-family: 'Dancing Script', sans-serif;
 		color: #f5f4f4;
-		margin: 1.5rem 6rem;
+		margin: 1rem 3rem;
 		text-align: left;
-		text-shadow: 0 0 4px black;
+		text-shadow: 0 0 2px black;
 
 		@media (min-width: 48em) {
 			text-align: center;

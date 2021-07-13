@@ -2,6 +2,7 @@ let $menuItems;
 let $barsBox;
 let $bars;
 let $menuBox;
+let $home, $about, $gallery, $contact;
 const carousel = {
 	currentImgIndex: 0,
 	container: '',
@@ -17,6 +18,10 @@ function prepareDomElements() {
 	$barsBox = document.querySelector('.nav__bars-box');
 	$bars = document.querySelector('.nav__bars');
 	$menuBox = document.querySelector('.nav__box');
+	$home = document.querySelector('#home');
+	$about = document.querySelector('#about');
+	$gallery = document.querySelector('#gallery');
+	$contact = document.querySelector('#contact');
 
 	carousel.imgArr = [...document.querySelectorAll('.carousel__img')];
 	carousel.nextBtn = document.querySelector('.carousel__btn--left');
@@ -42,6 +47,24 @@ function prepareDomEvnets() {
 	});
 
 	$barsBox.addEventListener('click', swipeMenu);
+	$menuItems.forEach((item) => item.addEventListener('click', swipeMenu));
+
+	// Scroll spy
+	window.addEventListener('scroll', () => {
+		let windo = window.pageYOffset + 200;
+		$menuItems.forEach((el) => {
+			el.classList.remove('active');
+		});
+		if ($about.offsetTop <= windo && $gallery.offsetTop >= windo) {
+			$menuItems[1].classList.add('active');
+		} else if ($gallery.offsetTop <= windo && $contact.offsetTop >= windo) {
+			$menuItems[2].classList.add('active');
+		} else if ($contact.offsetTop <= windo) {
+			$menuItems[3].classList.add('active');
+		} else {
+			$menuItems[0].classList.add('active');
+		}
+	});
 }
 
 function addActive(e) {
