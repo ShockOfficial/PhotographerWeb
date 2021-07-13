@@ -145,9 +145,47 @@
       </div>
     </section>
 
-    <section id="contact" class="contact"></section>
+    <section id="contact" class="contact">
+      <div class="contact__box">
+        <div class="contact__text-box">
+          <h2 class="contact__heading title">Kontakt</h2>
+          <p class="contact__text-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex porro iusto ipsam totam. Voluptates odio veniam sunt recusandae ut minima!</p>
+          <div class="contact__item"><i class="contact__icon icofont-mail"></i> <span class="contact__mail">example@mail.com</span>
+          <i class="contact__icon icofont-smart-phone"></i><span class="contact__number">777 777 777</span>
+        </div>
+        </div>
+        <div class="contact__form-box">
+          <h2 class="contact__form-title">Napisz do mnie</h2>
+          <form action="" class="contact__form">
+            <input id="name" type="text" class="contact__input" placeholder="Wpisz imię">
+            <input id="surname" type="text" class="contact__input" placeholder="Wpisz nazwisko">
+            <input id="email" type="text" class="contact__input" placeholder="Wpisz email">
+            <textarea id="area" class="contact__textarea" name="" id="textarea" cols="30" rows="10" placeholder="Napisz wiadomość..."></textarea>
+            <button type='button' class="contact__btn btn">Wyślij</button>
+          </form>
+        </div>
+      </div>
 
+      <div class="contact__error-box hide">
+        <h2 class="contact__error-title"> Błąd</h2>
+        <p class="contact__error-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, at.</p>
+      </div>
+    </section>
 
-		<script src="./js/app.js"></script>
+    <footer class="footer">
+      <div class="footer__box">
+        <p class="nav__logo">M</p>
+        <div class="footer__menu">
+          <a href="#home" class="footer__link">Home</a>
+          <a href="#about" class="footer__link">O MNIE</a>
+          <a href="#gallery" class="footer__link">Galeria</a>
+          <a href="#contact" class="footer__link">Kontakt</a>
+        </div>
+        <p class="footer__copyright">&copy; <span class="footer__year"></span> | Design and development by <a class="footer__auth" target="__blank" href="https://pawelmotyka.netlify.app/">Paweł Motyka</a> | All rights reserved</p>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+		<script type="module" src="./js/app.js"></script>
 	</body>
 </html>

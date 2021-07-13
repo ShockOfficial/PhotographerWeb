@@ -1,8 +1,16 @@
+import API_KEY from './apikey.js';
+import TEMPLATE_ID from './apikey.js';
+import SERVICE_ID from './apikey.js';
+
 let $menuItems;
 let $barsBox;
 let $bars;
 let $menuBox;
 let $home, $about, $gallery, $contact;
+let isSwipable = false;
+let $nameField, $surnameField, $emailField, $areaField, $contactBtn;
+let $errorTitle, $errorDesc, $error;
+
 const carousel = {
 	currentImgIndex: 0,
 	container: '',
@@ -23,6 +31,16 @@ function prepareDomElements() {
 	$gallery = document.querySelector('#gallery');
 	$contact = document.querySelector('#contact');
 
+	$nameField = document.querySelector('input#name');
+	$surnameField = document.querySelector('input#surname');
+	$emailField = document.querySelector('input#email');
+	$areaField = document.querySelector('textarea#area');
+	$contactBtn = document.querySelector('.contact__btn');
+
+	$error = document.querySelector('.contact__error-box');
+	$errorTitle = document.querySelector('.contact__error-title');
+	$errorDesc = document.querySelector('.contact__error-desc');
+
 	carousel.imgArr = [...document.querySelectorAll('.carousel__img')];
 	carousel.nextBtn = document.querySelector('.carousel__btn--left');
 	carousel.prevBtn = document.querySelector('.carousel__btn--right');
@@ -42,12 +60,15 @@ function prepareDomElements() {
 }
 
 function prepareDomEvnets() {
-	$menuItems.forEach((item) => {
-		item.addEventListener('click', addActive);
-	});
+	// $menuItems.forEach((item) => {
+	// 	item.addEventListener('click', addActive);
+	// });
 
 	$barsBox.addEventListener('click', swipeMenu);
 	$menuItems.forEach((item) => item.addEventListener('click', swipeMenu));
+
+	//Send Email
+	$contactBtn.addEventListener('click', sendEmial);
 
 	// Scroll spy
 	window.addEventListener('scroll', () => {
@@ -67,33 +88,37 @@ function prepareDomEvnets() {
 	});
 }
 
-function addActive(e) {
-	const items = $menuItems.filter((el) => el.classList.contains('active'));
-	items[0].classList.remove('active');
+// function addActive(e) {
+// 	const items = $menuItems.filter((el) => el.classList.contains('active'));
+// 	items[0].classList.remove('active');
 
-	e.target.classList.add('active');
-}
+// 	e.target.classList.add('active');
+// }
 
 function setMenuType() {
 	if (window.innerWidth < 768) {
 		$menuBox.classList.add('hide');
+		isSwipable = true;
 	} else {
 		$menuBox.classList.remove('hide');
+		isSwipable = false;
 	}
 }
 
 function swipeMenu() {
 	let flag = false;
-	if (!$menuBox.classList.contains('hide')) {
-		flag = true;
-	}
-	$bars.classList.toggle('moveBars');
-	$menuBox.classList.remove('hide');
-	$menuBox.classList.toggle('swipeDown');
+	if (isSwipable) {
+		if (!$menuBox.classList.contains('hide')) {
+			flag = true;
+		}
+		$bars.classList.toggle('moveBars');
+		$menuBox.classList.remove('hide');
+		$menuBox.classList.toggle('swipeDown');
 
-	setTimeout(() => {
-		flag ? $menuBox.classList.add('hide') : '';
-	}, 100);
+		setTimeout(() => {
+			flag ? $menuBox.classList.add('hide') : '';
+		}, 100);
+	}
 }
 
 function slideImage(e) {
@@ -134,11 +159,95 @@ function startAutoSwiping() {
 	}, 3000);
 }
 
+function setDate() {
+	const currentYear = new Date().getFullYear();
+	document.querySelector('.footer__year').textContent = currentYear;
+}
+
+function validateEmail(email) {
+	const re =
+		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(new String(email).toLowerCase());
+}
+
+function sendEmial(params) {
+	const numbers = /\d/;
+
+	if (
+		$nameField.value === '' ||
+		$surnameField.value === '' ||
+		$emailField.value === '' ||
+		$areaField.value === ''
+	) {
+		$errorTitle.textContent = 'BŁĄD!';
+		$errorDesc.textContent = 'Wypełnij wszystkie pola!';
+	} else if (
+		numbers.test($nameField.value) ||
+		numbers.test($surnameField.value) ||
+		$nameField.value.length < 3 ||
+		$surnameField.value.length < 3
+	) {
+		$errorTitle.textContent = 'BŁĄD!';
+		$errorDesc.textContent = 'Wpisz swoje dane prawidłowo!';
+	} else if (!validateEmail($emailField.value)) {
+		$errorTitle.textContent = 'BŁĄD!';
+		$errorDesc.textContent = 'Wpisz poprawny email!';
+	} else {
+		let tempParams = {
+			from_name: `${$nameField.value} ${$surnameField.value}`,
+			from_email: $emailField.value,
+			to_name: 'Paweł',
+			message: $areaField.value,
+		};
+
+		emailjs
+			.send(API_KEY.SERVICE_ID, API_KEY.TEMPLATE_ID, tempParams)
+			.then(function (respond) {
+				succesEmail();
+				showPopup();
+				clearInputs();
+			});
+
+		return;
+	}
+	showPopup();
+}
+
+function showPopup() {
+	$error.classList.remove('hide');
+	$error.classList.add('notify');
+	$contactBtn.disabled = true;
+	setTimeout(() => {
+		$error.classList.add('hide');
+	}, 1500);
+	setTimeout(() => {
+		$error.classList.remove('notify');
+		$errorTitle.removeAttribute('style');
+		$contactBtn.disabled = false;
+	}, 1800);
+}
+
+function succesEmail() {
+	$errorTitle.textContent = 'Sukces!';
+	$errorDesc.textContent = 'Twoja wiadomośc została wysłana!';
+}
+
+function clearInputs() {
+	$nameField.value = '';
+	$surnameField.value = '';
+	$emailField.value = '';
+	$areaField.value = '';
+}
+
 const main = function () {
+	(function () {
+		emailjs.init(API_KEY.API_KEY);
+	})();
 	prepareDomElements();
 	prepareDomEvnets();
 	setMenuType();
 	startAutoSwiping();
+	setDate();
 };
 
 document.addEventListener('DOMContentLoaded', main);
