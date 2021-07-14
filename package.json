@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Paweł Motyka",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "fslightbox": "^3.3.0-2"
   }
 }
