@@ -1,0 +1,13 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+  },
+  "author": "Paweł Motyka",
+  "license": "ISC",
+  "dependencies": {
+    "fslightbox": "^3.3.0-2"
+  }
+}
