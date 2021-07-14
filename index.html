@@ -45,147 +45,360 @@
 		</nav>
 
 		<header id="home" class="header">
-
 			<div class="carousel">
-        <div class="carousel__image-field">
-        <img src="./img/hero1.jpg" alt="" class="carousel__img">
-        <img src="./img/hero2.jpg" alt="" class="carousel__img">
-        <img src="./img/hero3.jpg" alt="" class="carousel__img">
-        <img src="./img/hero4.jpg" alt="" class="carousel__img">
-      </div>
-        <div class="carousel__btn-box">
-          <button id="left" class="carousel__btn carousel__btn--left">&xlArr;</button>
-          <span class="carousel__photo-status">1 / 4</span>
-        <button id='right'class="carousel__btn carousel__btn--right">&xrArr;</button>
-        </div>
-      </div>
+				<div class="carousel__image-field">
+					<img
+						src="./img/hero1-small.jpg"
+						srcset="./img/hero1-small.jpg 799w, ./img/hero1-big.jpg 800w"
+						alt=""
+						class="carousel__img"
+					/>
+
+					<img
+						src="./img/hero2-small.jpg"
+						srcset="./img/hero2-small.jpg 799w, ./img/hero2-big.jpg 800w"
+						alt=""
+						class="carousel__img"
+					/>
+					<img
+						src="./img/hero3-small.jpg"
+						srcset="./img/hero3-small.jpg 799w, ./img/hero3-big.jpg 800w"
+						alt=""
+						class="carousel__img"
+					/>
+					<img
+						src="./img/hero4-small.jpg"
+						srcset="./img/hero4-small.jpg 799w, ./img/hero4-big.jpg 800w"
+						alt=""
+						class="carousel__img"
+					/>
+					<img
+						src="./img/hero5-small.jpg"
+						srcset="./img/hero5-small.jpg 799w, ./img/hero5-big.jpg 800w"
+						alt=""
+						class="carousel__img"
+					/>
+				</div>
+				<div class="carousel__btn-box">
+					<button id="left" class="carousel__btn carousel__btn--left">
+						&xlArr;
+					</button>
+					<span class="carousel__photo-status">1 / 4</span>
+					<button id="right" class="carousel__btn carousel__btn--right">
+						&xrArr;
+					</button>
+				</div>
 			</div>
 		</header>
 
-    <section id="about" class="about">
-      
-      <div class="title-box">
-        <h2 class="title">O Mnie</h2>
-      </div>
-      <div class="about__box">
-        <div class="about__img-box">
-          <img src="./img/about-me.jpg" alt="" class="about__img">
-        </div>
-        <div class="about__text-content">
-          <h2 class="about__heading">Hej!</h2>
-          <p class="about__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque itaque natus qui voluptatibus veniam atque aspernatur ducimus omnis quidem, quo a, perspiciatis totam libero vitae.</p>
-        </div>    
-      </div>
-    </section>
+		<section id="about" class="about">
+			<div class="title-box">
+				<h2 class="title">O Mnie</h2>
+			</div>
+			<div class="about__box">
+				<div class="about__img-box">
+					<picture>
+						<source
+							media="(max-width: 799px)"
+							srcset="./img/about-me-small.jpg"
+						/>
+						<source
+							media="(min-width: 800px)"
+							srcset="./img/about-me-big.jpg"
+						/>
+						<img
+							class="about__img"
+							src="./img/about-me-small.jpg"
+							alt="Photographer photo"
+						/>
+					</picture>
+				</div>
+				<div class="about__text-content">
+					<h2 class="about__heading">Hej!</h2>
+					<p class="about__text">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+						itaque natus qui voluptatibus veniam atque aspernatur ducimus omnis
+						quidem, quo a, perspiciatis totam libero vitae.
+					</p>
+				</div>
+			</div>
+		</section>
 
-    <section id="gallery" class="gallery">
-      <div class="gallery__top-box">
-        <div class="gallery__bg"></div>
-        <h2 class="gallery__heading">Najlepsze fotografie</h2>
-        <p class="gallery__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto esse exercitationem reprehenderit id laudantium eum corrupti quae, fugiat eveniet voluptatibus nihil est deserunt voluptatum neque accusantium, amet fuga nobis sequi sapiente distinctio quis. Inventore sit expedita, quia error asperiores sed?</p>
-        <a href="https://www.instagram.com/swiatinnymioczami/" target="__blank" class="gallery__btn btn"><i class="icofont-instagram"></i> Zobacz Instagram</a>
-        <div class="gallery__text-content">
-        </div>
-      </div>
-      <div class="title-box gallery__title">
-        <h2 class="title">Galeria</h2>
-        <img class="gallery__svg gallery__svg--bird" src="./img/bird.svg" alt="">
-        <img class="gallery__svg gallery__svg--butterfly" src="./img/butterfly.svg" alt="">
+		<section id="gallery" class="gallery">
+			<div class="gallery__top-box">
+				<div class="gallery__bg"></div>
+				<h2 class="gallery__heading">Najlepsze fotografie</h2>
+				<p class="gallery__description">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto esse
+					exercitationem reprehenderit id laudantium eum corrupti quae, fugiat
+					eveniet voluptatibus nihil est deserunt voluptatum neque accusantium,
+					amet fuga nobis sequi sapiente distinctio quis. Inventore sit
+					expedita, quia error asperiores sed?
+				</p>
+				<a
+					href="https://www.instagram.com/swiatinnymioczami/"
+					target="__blank"
+					class="gallery__btn btn"
+					><i class="icofont-instagram"></i> Zobacz Instagram</a
+				>
+				<div class="gallery__text-content"></div>
+			</div>
+			<div class="title-box gallery__title">
+				<h2 class="title">Galeria</h2>
+				<img
+					class="gallery__svg gallery__svg--bird"
+					src="./img/bird.svg"
+					alt=""
+				/>
+				<img
+					class="gallery__svg gallery__svg--butterfly"
+					src="./img/butterfly.svg"
+					alt=""
+				/>
+			</div>
+			<div class="gallery__bottom-box">
+				<div class="gallery__item">
+					<a data-fslightbox="gallery--couple" href="./img/pary1-big.jpg">
+						<img
+							src="./img/pary1-small.jpg"
+							srcset="./img/pary1-small.jpg 799w, ./img/pary1-big.jpg 800w"
+							alt="Zdjęcia dla par"
+							class="gallery__img"
+						/>
+					</a>
+					<a data-fslightbox="gallery--couple" href="./img/pary2.jpg"></a>
+					<a data-fslightbox="gallery--couple" href="./img/pary3.jpg"></a>
+					<a data-fslightbox="gallery--couple" href="./img/pary4.jpg"></a>
 
-      </div>
-      <div class="gallery__bottom-box">
-        <div class="gallery__item">
-          <img src="./img/couple.jpg" alt="Zdjęcia dla par" class="gallery__img">
+					<div class="gallery__item-text-box">
+						<h3 class="gallery__item-heading">Zdjęcia par</h3>
+						<p class="gallery__item-description">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Aspernatur, saepe!
+						</p>
+					</div>
+				</div>
 
-          <div class="gallery__item-text-box">
-            <h3 class="gallery__item-heading">Zdjęcia par</h3>
-            <p class="gallery__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, saepe! </p>
-          </div>
-        </div>
+				<div class="gallery__item">
+					<a data-fslightbox="gallery--family" href="./img/family.jpg">
+						<img
+							src="./img/family.jpg"
+							alt="Zdjęcia dla rodzin"
+							class="gallery__img"
+						/>
+					</a>
 
-        <div class="gallery__item">
-          <img src="./img/family.jpg" alt="Zdjęcia dla rodzin" class="gallery__img">
+					<div class="gallery__item-text-box">
+						<h3 class="gallery__item-heading">Zdjęcia rodzin</h3>
+						<p class="gallery__item-description">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,
+							repellendus!
+						</p>
+					</div>
+				</div>
 
-          <div class="gallery__item-text-box">
-            <h3 class="gallery__item-heading">Zdjęcia rodzin</h3>
-            <p class="gallery__item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, repellendus!</p>
-          </div>
-        </div>
+				<div class="gallery__item">
+					<a data-fslightbox="gallery--outdoor" href="./img/plener1-big.jpg">
+						<img
+							src="./img/plener1-small.jpg"
+							srcset="./img/plener1-small.jpg 799w, ./img/plener1-big.jpg 800w"
+							alt="Zdjęcia plenerowe"
+							class="gallery__img"
+						/>
+					</a>
+					<a data-fslightbox="gallery--outdoor" href="./img/plener2.jpg"></a>
+					<a data-fslightbox="gallery--outdoor" href="./img/plener3.jpg"></a>
+					<a data-fslightbox="gallery--outdoor" href="./img/plener4.jpg"></a>
+					<a data-fslightbox="gallery--outdoor" href="./img/plener5.jpg"></a>
+					<a data-fslightbox="gallery--outdoor" href="./img/plener6.jpg"></a>
 
-        <div class="gallery__item">
-          <img src="./img/plener.jpg" alt="Zdjęcia plenerowe" class="gallery__img">
-          <div class="gallery__item-text-box">
-            <h3 class="gallery__item-heading">Zdjęcia plenerowe</h3>
-            <p class="gallery__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quam.</p>
-          </div>
-        </div>
+					<div class="gallery__item-text-box">
+						<h3 class="gallery__item-heading">Zdjęcia plenerowe</h3>
+						<p class="gallery__item-description">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Repellendus, quam.
+						</p>
+					</div>
+				</div>
 
-        <div class="gallery__item">
-          <img src="./img/portrait.jpg" alt="Zdjęcia portretowe" class="gallery__img">
-          <div class="gallery__item-text-box">
-            <h3 class="gallery__item-heading">Zdjęcia portretowe</h3>
-            <p class="gallery__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quam.</p>
-          </div>
-        </div>
-        <div class="gallery__item">
-          <img src="./img/landscape.jpg" alt="Zdjęcia krajobrazów" class="gallery__img">
-          <div class="gallery__item-text-box">
-            <h3 class="gallery__item-heading">Zdjęcia krajobrazu</h3>
-            <p class="gallery__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quam.</p>
-          </div>
-        </div>
+				<div class="gallery__item">
+					<a data-fslightbox="gallery--portrait" href="./img/portret1-big.jpg">
+						<img
+							src="./img/portret1-small.jpg"
+							srcset="
+								./img/portret1-small.jpg 799w,
+								./img/portret1-big.jpg   800w
+							"
+							alt="Zdjęcia portretowe"
+							class="gallery__img"
+						/>
+					</a>
+					<a data-fslightbox="gallery--portrait" href="./img/portret2.jpg"></a>
+					<a data-fslightbox="gallery--portrait" href="./img/portret3.jpg"></a>
+					<a data-fslightbox="gallery--portrait" href="./img/portret4.jpg"></a>
+					<a data-fslightbox="gallery--portrait" href="./img/portret5.jpg"></a>
+					<a data-fslightbox="gallery--portrait" href="./img/portret6.jpg"></a>
+					<a data-fslightbox="gallery--portrait" href="./img/portret7.jpg"></a>
 
-        <div class="gallery__item">
-          <img src="./img/macro.jpg" alt="Zdjęcia macro" class="gallery__img">
-          <div class="gallery__item-text-box">
-            <h3 class="gallery__item-heading">Zdjęcia macro</h3>
-            <p class="gallery__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quam.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+					<div class="gallery__item-text-box">
+						<h3 class="gallery__item-heading">Zdjęcia portretowe</h3>
+						<p class="gallery__item-description">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Repellendus, quam.
+						</p>
+					</div>
+				</div>
+				<div class="gallery__item">
+					<a
+						data-fslightbox="gallery--landscape"
+						href="./img/landscape1-big.jpg"
+					>
+						<img
+							src="./img/landscape1-small.jpg"
+							srcset="
+								./img/landscape1-small.jpg 799w,
+								./img/landscape1-big.jpg   800w
+							"
+							alt="Zdjęcia krajobrazów"
+							class="gallery__img"
+						/>
+					</a>
 
-    <section id="contact" class="contact">
-      <div class="contact__box">
-        <div class="contact__text-box">
-          <h2 class="contact__heading title">Kontakt</h2>
-          <p class="contact__text-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex porro iusto ipsam totam. Voluptates odio veniam sunt recusandae ut minima!</p>
-          <div class="contact__item"><i class="contact__icon icofont-mail"></i> <span class="contact__mail">example@mail.com</span>
-          <i class="contact__icon icofont-smart-phone"></i><span class="contact__number">777 777 777</span>
-        </div>
-        </div>
-        <div class="contact__form-box">
-          <h2 class="contact__form-title">Napisz do mnie</h2>
-          <form action="" class="contact__form">
-            <input id="name" type="text" class="contact__input" placeholder="Wpisz imię">
-            <input id="surname" type="text" class="contact__input" placeholder="Wpisz nazwisko">
-            <input id="email" type="text" class="contact__input" placeholder="Wpisz email">
-            <textarea id="area" class="contact__textarea" name="" id="textarea" cols="30" rows="10" placeholder="Napisz wiadomość..."></textarea>
-            <button type='button' class="contact__btn btn">Wyślij</button>
-          </form>
-        </div>
-      </div>
+					<a
+						data-fslightbox="gallery--landscape"
+						href="./img/landscape2.jpg"
+					></a>
+					<a
+						data-fslightbox="gallery--landscape"
+						href="./img/landscape3.jpg"
+					></a>
+					<a
+						data-fslightbox="gallery--landscape"
+						href="./img/landscape4.jpg"
+					></a>
 
-      <div class="contact__error-box hide">
-        <h2 class="contact__error-title"> Błąd</h2>
-        <p class="contact__error-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, at.</p>
-      </div>
-    </section>
+					<div class="gallery__item-text-box">
+						<h3 class="gallery__item-heading">Zdjęcia krajobrazu</h3>
+						<p class="gallery__item-description">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Repellendus, quam.
+						</p>
+					</div>
+				</div>
 
-    <footer class="footer">
-      <div class="footer__box">
-        <p class="nav__logo">M</p>
-        <div class="footer__menu">
-          <a href="#home" class="footer__link">Home</a>
-          <a href="#about" class="footer__link">O MNIE</a>
-          <a href="#gallery" class="footer__link">Galeria</a>
-          <a href="#contact" class="footer__link">Kontakt</a>
-        </div>
-        <p class="footer__copyright">&copy; <span class="footer__year"></span> | Design and development by <a class="footer__auth" target="__blank" href="https://pawelmotyka.netlify.app/">Paweł Motyka</a> | All rights reserved</p>
-      </div>
-    </footer>
+				<div class="gallery__item">
+					<a data-fslightbox="gallery--macro" href="./img/macro1-big.jpg">
+						<img
+							src="./img/macro1-small.jpg"
+							srcset="./img/macro1-small.jpg 799w, ./img/macro1-big.jpg 800w"
+							alt="Zdjęcia macro"
+							class="gallery__img"
+						/>
+					</a>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+					<a data-fslightbox="gallery--macro" href="./img/macro2.jpg"></a>
+					<a data-fslightbox="gallery--macro" href="./img/macro3.jpg"></a>
+					<a data-fslightbox="gallery--macro" href="./img/macro4.jpg"></a>
+					<a data-fslightbox="gallery--macro" href="./img/macro5.jpg"></a>
+					<a data-fslightbox="gallery--macro" href="./img/macro6.jpg"></a>
+
+					<div class="gallery__item-text-box">
+						<h3 class="gallery__item-heading">Zdjęcia macro</h3>
+						<p class="gallery__item-description">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Repellendus, quam.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="contact">
+			<div class="contact__box">
+				<div class="contact__text-box">
+					<h2 class="contact__heading title">Kontakt</h2>
+					<p class="contact__text-description">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex porro
+						iusto ipsam totam. Voluptates odio veniam sunt recusandae ut minima!
+					</p>
+					<div class="contact__item">
+						<i class="contact__icon icofont-mail"></i>
+						<span class="contact__mail"
+							>monika.motyka.photography@gmail.com</span
+						>
+						<i class="contact__icon icofont-smart-phone"></i
+						><span class="contact__number">690 549 904</span>
+					</div>
+				</div>
+				<div class="contact__form-box">
+					<h2 class="contact__form-title">Napisz do mnie</h2>
+					<form action="" class="contact__form">
+						<input
+							id="name"
+							type="text"
+							class="contact__input"
+							placeholder="Wpisz imię"
+						/>
+						<input
+							id="surname"
+							type="text"
+							class="contact__input"
+							placeholder="Wpisz nazwisko"
+						/>
+						<input
+							id="email"
+							type="text"
+							class="contact__input"
+							placeholder="Wpisz email"
+						/>
+						<textarea
+							id="area"
+							class="contact__textarea"
+							name=""
+							id="textarea"
+							cols="30"
+							rows="10"
+							placeholder="Napisz wiadomość..."
+						></textarea>
+						<button type="button" class="contact__btn btn">Wyślij</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="contact__error-box hide">
+				<h2 class="contact__error-title">Błąd</h2>
+				<p class="contact__error-desc">
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, at.
+				</p>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="footer__box">
+				<p class="nav__logo">M</p>
+				<div class="footer__menu">
+					<a href="#home" class="footer__link">Home</a>
+					<a href="#about" class="footer__link">O MNIE</a>
+					<a href="#gallery" class="footer__link">Galeria</a>
+					<a href="#contact" class="footer__link">Kontakt</a>
+				</div>
+				<p class="footer__copyright">
+					&copy; <span class="footer__year"></span> | Design and development by
+					<a
+						class="footer__auth"
+						target="__blank"
+						href="https://pawelmotyka.netlify.app/"
+						>Paweł Motyka</a
+					>
+					| All rights reserved
+				</p>
+			</div>
+		</footer>
+		<script src="node_modules/fslightbox/index.js"></script>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+		></script>
 		<script type="module" src="./js/app.js"></script>
 	</body>
 </html>

@@ -297,6 +297,13 @@ body {
   position: relative;
   height: 90vh;
   overflow: hidden;
+  padding-top: 8rem;
+}
+
+@media (min-width: 48em) {
+  .carousel {
+    padding-top: 0;
+  }
 }
 
 .carousel__image-field {
@@ -411,7 +418,7 @@ body {
 .about__img-box::after {
   content: '';
   width: 95%;
-  height: 80%;
+  height: 95%;
   position: absolute;
   bottom: -8%;
   right: -7%;
@@ -422,7 +429,7 @@ body {
 
 .about__img {
   position: relative;
-  width: 25rem;
+  width: 23rem;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
@@ -439,7 +446,7 @@ body {
   -webkit-box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
           box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
   background-color: #fdfdfd;
-  z-index: 2;
+  z-index: 5;
 }
 
 .about__text-content::after {

@@ -240,6 +240,10 @@ body {
 	position: relative;
 	height: 90vh;
 	overflow: hidden;
+	padding-top: 8rem;
+	@media (min-width: 48em) {
+		padding-top: 0;
+	}
 
 	&__image-field {
 		width: 100%;
@@ -320,7 +324,7 @@ body {
 		&::after {
 			content: '';
 			width: 95%;
-			height: 80%;
+			height: 95%;
 			position: absolute;
 			bottom: -8%;
 			right: -7%;
@@ -332,7 +336,7 @@ body {
 
 	&__img {
 		position: relative;
-		width: 25rem;
+		width: 23rem;
 		object-fit: cover;
 		border-radius: 5px;
 		clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
@@ -345,7 +349,7 @@ body {
 		padding: 2rem;
 		box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
 		background-color: $color-bg-primary;
-		z-index: 2;
+		z-index: 5;
 
 		&::after {
 			content: '';
