@@ -855,6 +855,13 @@ body {
 
 .process__title-box::after, .process__title-box::before {
   background-color: #fdfdfd;
+  display: none;
+}
+
+@media (min-width: 31.25em) {
+  .process__title-box::after, .process__title-box::before {
+    display: inline-block;
+  }
 }
 
 .process__title-box::before {

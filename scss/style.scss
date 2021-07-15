@@ -684,6 +684,11 @@ body {
 		&::after,
 		&::before {
 			background-color: $color-bg-primary;
+			display: none;
+
+			@media (min-width: 31.25em) {
+				display: inline-block;
+			}
 		}
 
 		&::before {
