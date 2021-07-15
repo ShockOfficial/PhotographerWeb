@@ -136,7 +136,6 @@ body {
 }
 
 .nav__logo {
-  margin: 4.5rem;
   display: block;
   -ms-grid-column-align: center;
       justify-self: center;
@@ -149,6 +148,17 @@ body {
 @media (min-width: 48em) {
   .nav__logo {
     width: 12rem;
+    margin: 0 auto;
+  }
+}
+
+.nav__logo-link {
+  margin-right: auto;
+  margin-left: 3.5rem;
+}
+
+@media (min-width: 48em) {
+  .nav__logo-link {
     margin: 0 auto;
   }
 }
@@ -267,6 +277,7 @@ body {
   gap: 1rem;
   background-color: #ebd1d1;
   color: #f5f4f4;
+  margin-top: 8rem;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -284,6 +295,7 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-top: 0;
   }
 }
 
@@ -1062,7 +1074,6 @@ body {
 
 .contact__form-box {
   padding: 3.5rem 4.5rem;
-  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

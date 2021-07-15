@@ -112,7 +112,6 @@ body {
 	}
 
 	&__logo {
-		margin: 4.5rem;
 		display: block;
 		justify-self: center;
 		align-self: center;
@@ -120,6 +119,15 @@ body {
 
 		@media (min-width: 48em) {
 			width: 12rem;
+			margin: 0 auto;
+		}
+	}
+
+	&__logo-link {
+		margin-right: auto;
+		margin-left: 3.5rem;
+
+		@media (min-width: 48em) {
 			margin: 0 auto;
 		}
 	}
@@ -199,6 +207,7 @@ body {
 
 	&__box {
 		position: absolute;
+
 		left: 30%;
 		display: flex;
 		align-items: flex-start;
@@ -211,6 +220,7 @@ body {
 		gap: 1rem;
 		background-color: $color-nav;
 		color: #f5f4f4;
+		margin-top: 8rem;
 		transition: transform 0.3s;
 
 		@media (min-width: 48em) {
@@ -220,6 +230,7 @@ body {
 			height: 100%;
 			width: auto;
 			justify-content: center;
+			margin-top: 0;
 		}
 	}
 
@@ -838,7 +849,6 @@ body {
 
 	&__form-box {
 		padding: 3.5rem 4.5rem;
-		width: 50%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
