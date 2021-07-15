@@ -6,10 +6,11 @@ let $menuItems;
 let $barsBox;
 let $bars;
 let $menuBox;
-let $home, $about, $gallery, $contact;
+let $home, $about, $gallery, $process, $contact;
 let isSwipable = false;
 let $nameField, $surnameField, $emailField, $areaField, $contactBtn;
 let $errorTitle, $errorDesc, $error;
+let $imagesRight;
 
 const carousel = {
 	currentImgIndex: 0,
@@ -30,6 +31,8 @@ function prepareDomElements() {
 	$about = document.querySelector('#about');
 	$gallery = document.querySelector('#gallery');
 	$contact = document.querySelector('#contact');
+	$process = document.querySelector('#process');
+	$imagesRight = document.querySelectorAll('.carousel__img--right');
 
 	$nameField = document.querySelector('input#name');
 	$surnameField = document.querySelector('input#surname');
@@ -78,22 +81,17 @@ function prepareDomEvnets() {
 		});
 		if ($about.offsetTop <= windo && $gallery.offsetTop >= windo) {
 			$menuItems[1].classList.add('active');
-		} else if ($gallery.offsetTop <= windo && $contact.offsetTop >= windo) {
+		} else if ($gallery.offsetTop <= windo && $process.offsetTop >= windo) {
 			$menuItems[2].classList.add('active');
-		} else if ($contact.offsetTop <= windo) {
+		} else if ($process.offsetTop <= windo && $contact.offsetTop >= windo) {
 			$menuItems[3].classList.add('active');
+		} else if ($contact.offsetTop <= windo) {
+			$menuItems[4].classList.add('active');
 		} else {
 			$menuItems[0].classList.add('active');
 		}
 	});
 }
-
-// function addActive(e) {
-// 	const items = $menuItems.filter((el) => el.classList.contains('active'));
-// 	items[0].classList.remove('active');
-
-// 	e.target.classList.add('active');
-// }
 
 function setMenuType() {
 	if (window.innerWidth < 768) {
@@ -239,6 +237,14 @@ function clearInputs() {
 	$areaField.value = '';
 }
 
+function RightClassToggler() {
+	if (window.innerWidth > 1100) {
+		$imagesRight.forEach((img) => img.classList.remove('carousel__img--right'));
+	} else {
+		$imagesRight.forEach((img) => img.classList.add('carousel__img--right'));
+	}
+}
+
 const main = function () {
 	(function () {
 		emailjs.init(API_KEY.API_KEY);
@@ -248,7 +254,10 @@ const main = function () {
 	setMenuType();
 	startAutoSwiping();
 	setDate();
+	RightClassToggler();
+	AOS.init();
 };
 
 document.addEventListener('DOMContentLoaded', main);
 window.addEventListener('resize', setMenuType);
+window.addEventListener('resize', RightClassToggler);

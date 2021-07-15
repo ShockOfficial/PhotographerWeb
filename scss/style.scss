@@ -29,7 +29,7 @@ body {
 	background-color: #f9fdfd;
 	overflow-x: hidden;
 	@media (min-width: 48em) {
-		padding-left: 165px;
+		padding-left: 225px;
 	}
 }
 
@@ -71,6 +71,7 @@ body {
 	font-family: sans-serif;
 	position: relative;
 	font-size: 4.5rem;
+	text-transform: uppercase;
 	font-family: 'Caveat', sans-serif;
 	color: $color-font;
 	font-weight: bold;
@@ -93,7 +94,7 @@ body {
 	position: fixed;
 	background-color: $color-nav;
 	width: 100%;
-	height: 80px;
+	height: 8rem;
 	display: flex;
 	align-items: center;
 	box-shadow: 15px 0 0 $color-bg-primary;
@@ -103,7 +104,7 @@ body {
 	@media (min-width: 48em) {
 		left: 0;
 		top: 0;
-		width: 150px;
+		width: 220px;
 		height: 100vh;
 		flex-direction: column;
 		overflow: hidden;
@@ -111,16 +112,15 @@ body {
 	}
 
 	&__logo {
-		font-size: 6rem;
-		font-family: 'Dancing Script', sans-serif;
-		color: #f5f4f4;
-		margin: 1rem 3rem;
-		text-align: left;
-		text-shadow: 0 0 2px black;
+		margin: 4.5rem;
+		display: block;
+		justify-self: center;
+		align-self: center;
+		width: 7rem;
 
 		@media (min-width: 48em) {
-			text-align: center;
-			margin: 1.5rem 0;
+			width: 12rem;
+			margin: 0 auto;
 		}
 	}
 
@@ -258,6 +258,11 @@ body {
 		height: 100%;
 		flex: 0 0 100%;
 		object-fit: cover;
+		object-position: center;
+
+		&--right {
+			object-position: 70% 0;
+		}
 	}
 
 	&__btn-box {
@@ -327,7 +332,7 @@ body {
 			position: absolute;
 			bottom: -8%;
 			right: -7%;
-			border: 8px solid rgba($color-bg-tetriary, 0.6);
+			border: 8px solid rgba(#95afc0, 0.6);
 			border-radius: 5px;
 			z-index: 3;
 		}
@@ -649,6 +654,89 @@ body {
 }
 
 //////////////////////////////////////////////////////////////////
+/////////// Process SECTION
+
+.process {
+	position: relative;
+	overflow-x: hidden;
+	background-color: $color-bg-tetriary;
+
+	&__title-box {
+		&::after,
+		&::before {
+			background-color: $color-bg-primary;
+		}
+
+		&::before {
+			left: 115%;
+		}
+	}
+	&__title {
+		color: $color-bg-primary;
+
+		&::after {
+			border: 2px solid $color-bg-primary;
+		}
+	}
+
+	&__box {
+		@include wrapper();
+	}
+
+	&__item {
+		padding: 2.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
+
+		@media (min-width: 48em) {
+			gap: 3.5rem;
+		}
+	}
+
+	&__text-content {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	&__icon {
+		font-size: 8rem;
+		color: $color-bg-primary;
+	}
+
+	&__item-title {
+		font-size: 3.5rem;
+		color: $color-primary;
+		font-family: 'Amatic SC', cursive;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 4px;
+		margin-bottom: 0.5rem;
+	}
+
+	&__item-subtitle {
+		font-size: 2.5rem;
+		color: $color-primary;
+		font-family: 'Amatic SC', sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-style: normal;
+		padding-bottom: 0.5rem;
+		border-bottom: 1px solid $color-primary;
+	}
+
+	&__item-desc {
+		margin-top: 0.7rem;
+		color: #dfdfdf;
+		font-size: 1.4rem;
+	}
+}
+
+//////////////////////////////////////////////////////////////////
 /////////// CONTACT
 
 .contact {
@@ -673,8 +761,9 @@ body {
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+
 		@media (min-width: 48em) {
-			width: 25%;
+			width: 50%;
 		}
 	}
 
@@ -722,7 +811,7 @@ body {
 		justify-items: center;
 		align-items: center;
 		grid-gap: 1.5rem;
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		font-weight: bold;
 	}
 

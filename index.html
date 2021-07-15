@@ -10,9 +10,10 @@
 		/>
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@300;400;700&family=Roboto:wght@300;400;700&family=M+PLUS+Rounded+1c:wght@300;400;700&family=Dancing+Script:wght@400;700&family=Nunito:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@300;400;700&family=Roboto:wght@300;400;700&family=M+PLUS+Rounded+1c:wght@300;400;700&family=Dancing+Script:wght@400;700&family=Nunito:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Caveat:wght@400;700&family=Amatic+SC:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 		<link rel="stylesheet" href="./icofont/icofont.css" />
 
 		<link rel="stylesheet" href="./css/style.css" />
@@ -21,7 +22,8 @@
 	<body>
 		<nav class="nav">
 			<a href="#" class="nav__link">
-				<p class="nav__logo">M</p>
+				<!-- <p class="nav__logo">M</p> -->
+				<img src="./img/logo-no-bg 1.svg" alt="" class="nav__logo" />
 			</a>
 
 			<div class="nav__box">
@@ -33,6 +35,9 @@
 				>
 				<a href="#gallery" class="nav__link"
 					><i class="nav__icon icofont-camera-alt"></i>GALERIA</a
+				>
+				<a href="#process" class="nav__link"
+					><i class="nav__icon icofont-gear"></i>Jak to działa?</a
 				>
 				<a href="#contact" class="nav__link"
 					><i class="nav__icon icofont-ui-message"></i>KONTAKT</a
@@ -64,19 +69,19 @@
 						src="./img/hero3-small.jpg"
 						srcset="./img/hero3-small.jpg 799w, ./img/hero3-big.jpg 800w"
 						alt=""
-						class="carousel__img"
+						class="carousel__img carousel__img--right"
 					/>
 					<img
 						src="./img/hero4-small.jpg"
 						srcset="./img/hero4-small.jpg 799w, ./img/hero4-big.jpg 800w"
 						alt=""
-						class="carousel__img"
+						class="carousel__img carousel__img--right"
 					/>
 					<img
 						src="./img/hero5-small.jpg"
 						srcset="./img/hero5-small.jpg 799w, ./img/hero5-big.jpg 800w"
 						alt=""
-						class="carousel__img"
+						class="carousel__img carousel__img--right"
 					/>
 				</div>
 				<div class="carousel__btn-box">
@@ -157,7 +162,7 @@
 				/>
 			</div>
 			<div class="gallery__bottom-box">
-				<div class="gallery__item">
+				<div class="gallery__item" data-aos="fade-up">
 					<a data-fslightbox="gallery--couple" href="./img/pary1-big.jpg">
 						<img
 							src="./img/pary1-small.jpg"
@@ -179,7 +184,7 @@
 					</div>
 				</div>
 
-				<div class="gallery__item">
+				<div class="gallery__item" data-aos="fade-up">
 					<a data-fslightbox="gallery--family" href="./img/family.jpg">
 						<img
 							src="./img/family.jpg"
@@ -197,7 +202,7 @@
 					</div>
 				</div>
 
-				<div class="gallery__item">
+				<div class="gallery__item" data-aos="fade-up">
 					<a data-fslightbox="gallery--outdoor" href="./img/plener1-big.jpg">
 						<img
 							src="./img/plener1-small.jpg"
@@ -221,7 +226,7 @@
 					</div>
 				</div>
 
-				<div class="gallery__item">
+				<div class="gallery__item" data-aos="fade-up">
 					<a data-fslightbox="gallery--portrait" href="./img/portret1-big.jpg">
 						<img
 							src="./img/portret1-small.jpg"
@@ -248,7 +253,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="gallery__item">
+				<div class="gallery__item" data-aos="fade-up">
 					<a
 						data-fslightbox="gallery--landscape"
 						href="./img/landscape1-big.jpg"
@@ -286,7 +291,7 @@
 					</div>
 				</div>
 
-				<div class="gallery__item">
+				<div class="gallery__item" data-aos="fade-up">
 					<a data-fslightbox="gallery--macro" href="./img/macro1-big.jpg">
 						<img
 							src="./img/macro1-small.jpg"
@@ -307,6 +312,61 @@
 						<p class="gallery__item-description">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit.
 							Repellendus, quam.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="process" class="process">
+			<div class="process__title-box title-box">
+				<h2 class="title process__title">Jak to działa?</h2>
+			</div>
+			<div class="process__box">
+				<div class="process__item" data-aos="fade-right">
+					<i class="process__icon icofont-ui-calendar"></i>
+					<div class="process__text-content">
+						<h3 class="process__item-title">Kontakt</h3>
+						<h4 class="process__item-subtitle">Ustalamy szczegóły</h4>
+						<p class="process__item-desc">
+							Na początku naszej przygody omawiamy detale naszej sesji, aby
+							wszystko było takie jak sobie wymarzysz!
+						</p>
+					</div>
+				</div>
+
+				<div class="process__item" data-aos="fade-right" data-aos-offset="200">
+					<i class="process__icon icofont-photobucket"></i>
+					<div class="process__text-content">
+						<h3 class="process__item-title">Sesja</h3>
+						<h4 class="process__item-subtitle">Robimy zdjęcia</h4>
+						<p class="process__item-desc">
+							Na sesji zdjęciowej czujesz się swobodnie i bawisz się dobrze, a
+							ja zajmuję się resztą i stale Cię kieruję.
+						</p>
+					</div>
+				</div>
+
+				<div class="process__item" data-aos="fade-right" data-aos-offset="200">
+					<i class="process__icon icofont-diamond"></i>
+					<div class="process__text-content">
+						<h3 class="process__item-title">Obróbka</h3>
+						<h4 class="process__item-subtitle">Szlifujemy kadry</h4>
+						<p class="process__item-desc">
+							Po zakończeniu sesji zaszywam się w domowych pieleszach i obrabiam
+							zdjęcia, aby wydobyć z nich to co najlepsze.
+						</p>
+					</div>
+				</div>
+
+				<div class="process__item" data-aos="fade-right" data-aos-offset="200">
+					<i class="process__icon icofont-send-mail"></i>
+					<div class="process__text-content">
+						<h3 class="process__item-title">Wysyłka</h3>
+						<h4 class="process__item-subtitle">Efekt współpracy</h4>
+						<p class="process__item-desc">
+							Następnie wysyłam Ci gotowe zdjęcia. Zawsze otrzymasz galerię
+							elektroniczną, ale możesz też zdecydować się na odbitki.
 						</p>
 					</div>
 				</div>
@@ -399,6 +459,7 @@
 			type="text/javascript"
 			src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
 		></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script type="module" src="./js/app.js"></script>
 	</body>
 </html>
