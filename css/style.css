@@ -143,6 +143,7 @@ body {
       -ms-grid-row-align: center;
       align-self: center;
   width: 7rem;
+  font-family: 'Forum', sans-serif;
 }
 
 @media (min-width: 48em) {
