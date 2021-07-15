@@ -314,7 +314,7 @@ body {
 		padding-top: 5rem;
 		@include wrapper();
 
-		@media (min-width: 48em) {
+		@media (min-width: 81.25em) {
 			flex-direction: row;
 			padding: 12rem 6rem;
 			padding-top: 5rem;
@@ -368,7 +368,7 @@ body {
 			border-top: none;
 		}
 
-		@media (min-width: 48em) {
+		@media (min-width: 81.25em) {
 			margin-left: 4rem;
 
 			&::after {
@@ -389,7 +389,7 @@ body {
 	}
 
 	&__text {
-		font-size: 1.8rem;
+		font-size: 1.6rem;
 		text-align: center;
 		font-family: 'Nunito', sans-serif;
 		font-weight: 400;
@@ -517,7 +517,6 @@ body {
 	&__bottom-box {
 		@include wrapper();
 		position: relative;
-		// background-color: $color-bg-primary;
 		border-radius: 8px;
 		padding: 1.5rem 2.5rem;
 		padding-bottom: 15rem;
@@ -572,12 +571,12 @@ body {
 		background-color: $color-bg-primary;
 
 		@media (min-width: 48em) {
-			width: 49%;
-			flex: 1 1 48%;
+			width: 95%;
+			flex: 1 1 49%;
 			padding: 1.5rem;
 		}
 
-		@media (min-width: 68.75em) {
+		@media (min-width: 87.5em) {
 			flex: 1 1 30%;
 			height: 530px;
 		}
@@ -594,7 +593,7 @@ body {
 
 	&__item-text-box {
 		position: absolute;
-		width: 80%;
+		width: 85%;
 		bottom: -10%;
 		padding: 1.5rem;
 
@@ -608,6 +607,7 @@ body {
 			transform: translateX(0);
 			box-shadow: unset;
 			width: 100%;
+			height: 12rem;
 			background-color: #f8f1f1;
 			box-shadow: 3px 3px 2px rgba(37, 31, 31, 0.1);
 		}
@@ -632,8 +632,7 @@ body {
 		}
 
 		@media (min-width: 56.25em) {
-			margin-left: 0.5rem;
-			margin-top: 1rem;
+			margin-top: 0.5rem;
 		}
 	}
 
@@ -660,27 +659,40 @@ body {
 	position: relative;
 	overflow-x: hidden;
 	background-color: $color-bg-tetriary;
+	padding-bottom: 5rem;
 
 	&__title-box {
+		margin-right: 2rem;
+
+		@media (min-width: 22.5em) {
+			margin: 3.5rem auto;
+		}
+
 		&::after,
 		&::before {
 			background-color: $color-bg-primary;
 		}
 
 		&::before {
-			left: 115%;
+			left: 113%;
 		}
 	}
 	&__title {
 		color: $color-bg-primary;
 
 		&::after {
+			width: 113%;
 			border: 2px solid $color-bg-primary;
 		}
 	}
 
 	&__box {
 		@include wrapper();
+		padding: 0 1.5rem;
+
+		@media (min-width: 48em) {
+			padding: 0 3.5rem;
+		}
 	}
 
 	&__item {
@@ -709,7 +721,7 @@ body {
 	}
 
 	&__item-title {
-		font-size: 3.5rem;
+		font-size: 3.7rem;
 		color: $color-primary;
 		font-family: 'Amatic SC', cursive;
 		text-transform: uppercase;
@@ -817,9 +829,6 @@ body {
 
 	&__number {
 		justify-self: start;
-	}
-
-	&__mail {
 	}
 
 	&__form-box {
